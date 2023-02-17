@@ -1,0 +1,22 @@
+version: "3"
+services:
+  url-title-parse-service:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - ./url-title-parse-service:/app  # Fix path syntax here
+    command: sh -c "npm install && node server.js"  # Modify command here
+    ports:
+      - "3000:3000"
+    restart: always
+  portainer:
+    image: portainer/portainer-ce
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    restart: always
+
+volumes:
+  portainer_data:
