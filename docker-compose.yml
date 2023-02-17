@@ -4,8 +4,8 @@ services:
     image: node:14
     working_dir: /app
     volumes:
-      - ./url-title-parse-service:/app  # Fix path syntax here
-    command: sh -c "npm install && node server.js"  # Modify command here
+      - ../url-title-parse-service:/app
+    command: sh -c "npm install && node server.js"
     ports:
       - "3000:3000"
     restart: always
