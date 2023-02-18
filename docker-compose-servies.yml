@@ -1,0 +1,7 @@
+version: "3"
+services:
+  url-title-parse-service:
+    image: ghcr.io/dragonforce2010/power-link-service:latest
+    ports:
+      - "6000:6000"
+    restart: always
